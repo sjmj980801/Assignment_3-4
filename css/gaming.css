@@ -1,0 +1,74 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 1.5vmin;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+#container{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+}
+aside{
+    margin-top: 10vmin;
+    margin-bottom: 1vmin;
+    font-size: 2em;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+aside > *{
+    width: 20%;
+}
+aside img{
+    height: 100%;
+    width: 100%;
+}
+main{
+    font-size: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 6fr ;
+}
+main img{
+    width: 100%;
+}
+main > div {
+    display: flex;
+    flex-direction: column;
+}
+main > div:not(:last-child){
+    justify-content: flex-end;
+}
+main > div:last-child{
+    justify-content: center;
+}
+
+#money_tree > *, #bank, #timer{
+    color: #eee;
+    background-color: lightskyblue;
+    border-radius: 50%;
+    margin: .5em;
+}
+.current_branch{
+    background-color: lightgreen !important;
+}
+
+#bank ~ div, button, #game_stage > *:not(:first-child), aside > *:last-child{
+    font-size: 1em;
+    color: white;
+    background-color: #333;
+    border:none;
+    outline: none;
+    cursor: default;
+    padding: .2em 1em;
+    margin: .5em;
+}
+#bank ~ div:hover, button:hover, #game_stage > *:not(:first-child):hover, aside > *:last-child:hover{
+    background-color: lightcoral;
+    cursor: pointer;
+}
+
