@@ -46,18 +46,32 @@ main > div:not(:last-child){
 main > div:last-child{
     justify-content: center;
 }
-
-#money_tree > *, #bank, #timer{
+#money_tree, #money_tree+div, #logo+div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#money_tree > div{
+    width: fit-content;
+}
+#money_tree > div, #bank, #timer{
     color: #eee;
     background-color: lightskyblue;
     border-radius: 50%;
-    margin: .5em;
+    margin-bottom: .1em;
+    padding: .1em .5em;
+    box-sizing: border-box;
 }
 .current_branch{
     background-color: lightgreen !important;
 }
 
-#bank ~ div, button, #game_stage > *:not(:first-child), aside > *:last-child{
+#bank ~ div,
+button,
+#game_stage > *:not(:first-child),
+#save,
+#resume{
     font-size: 1em;
     color: white;
     background-color: #333;
@@ -67,8 +81,23 @@ main > div:last-child{
     padding: .2em 1em;
     margin: .5em;
 }
-#bank ~ div:hover, button:hover, #game_stage > *:not(:first-child):hover, aside > *:last-child:hover{
+#bank ~ div:hover,
+button:hover,
+#game_stage > *:not(:first-child):hover,
+#save:hover,
+#resume:hover{
     background-color: lightcoral;
     cursor: pointer;
 }
-
+#bank ~ div:active,
+button:active,
+#game_stage > *:not(:first-child):active,
+#save:active,
+#resume:active{
+    background-color: lightgreen;
+}
+@media (min-width: 768px) {
+    #container {
+        width: 70%;
+    }
+}

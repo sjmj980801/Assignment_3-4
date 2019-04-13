@@ -46,6 +46,7 @@ footer{
 }
 #rules{
     padding: 0 1.5em;
+    text-align: left;
 }
 #info > form{
     padding-top: 1em;
@@ -70,7 +71,7 @@ input[type=radio]{
     justify-content: space-between;
     margin: 0 auto;
 }
-#get_started, #start_button,#resume_button, #rules_button{
+#get_started, #start_button, #rules_button{
     font-size: 3vmin;
     background-color: black;
     color: #DDDDDD;
@@ -79,7 +80,7 @@ input[type=radio]{
     display: inline-block;
     padding: .5rem 1.5rem;
 }
-#get_started:hover, #start_button:hover,#resume_button:hover, #rules_button:hover{
+#get_started:hover, #start_button:hover, #rules_button:hover{
     color: black;
     background-color: lightcoral;
 }
