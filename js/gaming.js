@@ -1,5 +1,4 @@
-const shuffled_list = list => list.sort(()=>Math.random()-0.5);
-
+//<editor-fold desc="Classes">
 class Question {
     constructor(question, correct_answer, option1, option2, option3) {
         this.question = question;
@@ -9,8 +8,16 @@ class Question {
         this.option3 = option3;
     }
 }
+class Round{
+    constructor(number, time, tree){
+        this.number = number;
+        this.tree = tree;
+        this.time = time;
+    }
+}
+//</editor-fold>
 
-//<editor-fold desc="Questions">
+//<editor-fold desc="Questions_List">
 function load_questions() {
     questions.push(new Question(
         "The planet where there exists a situation like pressure cooker:",
@@ -400,17 +407,17 @@ function load_questions() {
 }
 //</editor-fold>
 
-const name = localStorage.getItem("name");
-const age = localStorage.getItem("age");
-const sex = localStorage.getItem("sex");
-let greeting = '';
-if(sex==="male"){
-    greeting = "Mr.";
-}else if(sex==="female"){
-    greeting = "Ms.";
+//<editor-fold desc="rounds_list">
+function load_rounds(){
+    rounds.push(new Round(1, 120, ["$500,000", "$250,000", "$125,000", "$75,000", "$50,000", "$10,000", "$5000", "$1000", "$0"]));
+    rounds.push(new Round(2, 90, ["$500,000", "$250,000", "$125,000", "$75,000", "$50,000", "$10,000", "$5000", "$1000", "$0"]));
+    rounds.push(new Round(3, 30, ["3", "2", "1"]));
 }
+//</editor-fold>
 
 //<editor-fold desc="Functions">
+const shuffled_list = list => list.sort(()=>Math.random()-0.5);
+
 function create_element(element_name, text){
     let element = document.createElement(element_name);
     element.innerText = text;
@@ -468,7 +475,7 @@ function tree_move_up(round){
             bank_branch();
             reset_money_tree();
         }else{
-            stage_div.innerHTML = `🎉Congratulations for our winner, ${greeting} ${name}, You are The Strongest Link, ${bank.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} is yours now.`;
+            stage_div.innerHTML = `🎉Congratulations for our winner, ${greeting} ${name}, you are The Strongest Link, $${bank.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} is yours now.`;
             gaming = false;
         }
     }
@@ -568,26 +575,21 @@ const round_div = document.querySelector("#round");
 const stage_div = document.querySelector("#game_stage");
 const money_tree_div = document.querySelector("#money_tree");
 const bank_div = document.querySelector("#bank");
-const bank_button = document.querySelector("#bank ~ div");
+const bank_button = document.querySelector("#bank + div");
 const timer_div = document.querySelector("#timer");
 const save_div = document.querySelector("#save");
 const resume_div = document.querySelector("#resume");
+const name = localStorage.getItem("name");
+const age = localStorage.getItem("age");
+const sex = localStorage.getItem("sex");
 
-class Round{
-    constructor(number, time, tree){
-        this.number = number;
-        this.tree = tree;
-        this.time = time;
-    }
+let greeting;
+if(sex==="male"){
+    greeting = "Mr.";
+}else if(sex==="female"){
+    greeting = "Ms.";
 }
 
-//<editor-fold desc="rounds_list">
-function load_rounds(){
-    rounds.push(new Round(1, 120, ["$500,000", "$250,000", "$125,000", "$75,000", "$50,000", "$10,000", "$5000", "$1000", "$0"]));
-    rounds.push(new Round(2, 90, ["$500,000", "$250,000", "$125,000", "$75,000", "$50,000", "$10,000", "$5000", "$1000", "$0"]));
-    rounds.push(new Round(3, 30, ["3", "2", "1"]));
-}
-//</editor-fold>
 let questions = [];
 let rounds=[];
 let bank = 0;
@@ -605,7 +607,6 @@ save_div.addEventListener("click",()=>{
 
 resume_div.addEventListener("click",()=>{
     let saved = JSON.parse(localStorage.getItem("saved"));
-    console.log(saved);
     if(saved)
         resume();
 });

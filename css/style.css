@@ -47,7 +47,13 @@ footer{
 #rules{
     padding: 0 1.5em;
     text-align: left;
+    font-family: monospace, Consolas;
 }
+#rules > p{
+    line-height: 2em;
+    padding-left: 1em;
+}
+
 #info > form{
     padding-top: 1em;
 }
