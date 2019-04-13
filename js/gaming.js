@@ -468,7 +468,7 @@ function tree_move_up(round){
             bank_branch();
             reset_money_tree();
         }else{
-            stage_div.innerHTML = `🎉Congratulations for our winner, ${greeting} ${name}, You are The Strongest Link, ${bank.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} is yours now.`;
+            stage_div.innerHTML = `🎉Congratulations for our winner, ${greeting} ${name}, you are The Strongest Link, $${bank.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} is yours now.`;
             gaming = false;
         }
     }
