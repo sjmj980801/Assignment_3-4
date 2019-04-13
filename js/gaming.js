@@ -605,7 +605,6 @@ save_div.addEventListener("click",()=>{
 
 resume_div.addEventListener("click",()=>{
     let saved = JSON.parse(localStorage.getItem("saved"));
-    console.log(saved);
     if(saved)
         resume();
 });
