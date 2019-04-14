@@ -20,6 +20,12 @@ class Round{
 //<editor-fold desc="Questions_List">
 function load_questions() {
     questions.push(new Question(
+        "3 + 5 = ?",
+        "8",
+        "7",
+        "6",
+        "78"));
+    questions.push(new Question(
         "The planet where there exists a situation like pressure cooker:",
         "Venus",
         "Jupiter",
