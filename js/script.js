@@ -59,7 +59,6 @@ rules_button.addEventListener("click",function(){
 
 get_started_anchor.addEventListener("click",function(){
     let sex_tag = document.querySelector("input[name=sex]:checked");
-    console.log(sex_tag.value);
     if(age_valid&&name_valid){
         localStorage.setItem("sex",sex_tag.value);
         get_started_anchor.href="html/gaming.html";

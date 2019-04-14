@@ -19,7 +19,6 @@ aside{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: #f4f4f4;
 }
 aside > *{
     width: 20%;
@@ -35,6 +34,7 @@ main{
 }
 main img{
     width: 100%;
+    filter: drop-shadow(.2rem .2rem .2rem #999);
 }
 main > div {
     display: flex;
@@ -80,6 +80,11 @@ button,
     cursor: default;
     padding: .2em 1em;
     margin: .5em;
+}
+#game_stage, aside, main>div:first-child{
+    padding: 1rem;
+    border: .05rem solid #EEEEEE;
+    box-shadow: 1rem 1rem 1rem #EEEEEE;
 }
 #bank ~ div:hover,
 button:hover,
