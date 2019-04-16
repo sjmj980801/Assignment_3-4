@@ -50,6 +50,24 @@ function load_questions() {
         "Calisto",
         "None of these"));
     questions.push(new Question(
+        "The biggest country in the wolrd:",
+        "Russia",
+        "Canada",
+        "Chima",
+        "Japan"));
+    questions.push(new Question(
+        "The capital city of canada:",
+        "otwa",
+        "tortonto",
+        "venquever",
+        "None of these"));
+    questions.push(new Question(
+        "who is the current president of the usa:",
+        "Donald trump",
+        "Obama",
+        "putin",
+        "None of these"));
+    questions.push(new Question(
         "The largest satellite of the planet Saturn is:",
         "Titan",
         "Atlas",
